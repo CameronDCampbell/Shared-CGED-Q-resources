@@ -6,7 +6,9 @@ This is a collection of resources to facilitate use of the publicly released ver
 Sites for data download
 
 [HKUST Dataspace](https://dataspace.ust.hk/dataset.xhtml?persistentId=doi:10.14711/dataset/E9GKRS)
+
 [Harvard Dataverse](https://doi.org/10.7910/DVN/GMQWVZ)
+
 [Renmin University Institute of Qing History](http://39.96.59.69/DownloadFile/DLFile)
 
 Recode tables
