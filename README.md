@@ -33,7 +33,8 @@ Through a merge, this helps clean up and make consistent the original 籍貫省 
 
 Example of use, assuming one of the public release files is already loaded in STATA, and the Chushen recodes file is placed in the current working directory:
 
+```
 merge m:1 籍贯省 using "CGED-Q JSL Public Release Province of Origin 籍貫省 Recodes.dta",keep(match master)
-
+```
 
 
