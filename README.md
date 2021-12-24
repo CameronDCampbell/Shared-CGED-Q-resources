@@ -1,4 +1,4 @@
-# Shared-CGED-Q resources
+# Shared CGED-Q resources
 This is a collection of resources to facilitate use of the CGED-Q JSL Public Releases. This will include code snippets for recoding or otherwise handling unusual cases, tables for recoding/categorization/cleanup of variables. 
 
 The materials here are not part of the official data release. Use at your own risk. They may change as we release more data, or as we discover issues. 
