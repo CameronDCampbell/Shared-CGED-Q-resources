@@ -3,7 +3,7 @@ This is a collection of resources to facilitate use of the publicly released ver
 
 [Introduction to the CGED at the Lee-Campbell Group Website](https://www.shss.ust.hk/lee-campbell-group/projects/china-government-employee-database-qing-cged-q/)
 
-Sites for data download
+#Sites for data download
 
 [HKUST Dataspace](https://dataspace.ust.hk/dataset.xhtml?persistentId=doi:10.14711/dataset/E9GKRS)
 
@@ -11,7 +11,7 @@ Sites for data download
 
 [Renmin University Institute of Qing History](http://39.96.59.69/DownloadFile/DLFile)
 
-Recode tables
+#Recode tables
 
 [出身 Chushen recode table - as a Stata .dta file](<CGED-Q JSL Public Release Chushen Recodes.dta>)
 
