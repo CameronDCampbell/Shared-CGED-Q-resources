@@ -3,6 +3,8 @@ This is a collection of resources to facilitate use of the CGED-Q JSL Public Rel
 
 The materials here are not part of the official data release. Use at your own risk. They may change as we release more data, or as we discover issues. 
 
+The CGED-Q JSL Public Releases are a [Lee-Campbell Group project](https://www.shss.ust.hk/lee-campbell-group). Please visit our website to learn more about our projects and research outputs.
+
 [Introduction to the CGED at the Lee-Campbell Group Website](https://www.shss.ust.hk/lee-campbell-group/projects/china-government-employee-database-qing-cged-q/)
 
 # Sites for CGED-Q JSL Public Release download
