@@ -51,13 +51,11 @@ Through a merge, this helps clean up and make consistent the original 籍貫省 
 Example of use, assuming one of the public release files is already loaded in STATA, and the Chushen recodes file is placed in the current working directory:
 
 ```
-generate 籍贯省_original = 籍贯省
 merge m:1 籍贯省 using "CGED-Q JSL Public Release Province of Origin 籍貫省 Recodes.dta",keep(match master) nogenerate
-replace 籍贯省 = "安徽" if (ren_xian == "亳州" |ren_xian =="休寧" | ren_xian=="婺源" | ren_xian == "宣城" | ren_xian=="巢縣" | ren_xian=="旌德" | ren_xian =="桐城" | ren_xian =="歙縣" | ren_xian =="涇縣" | ren_xian =="滁州" | ren_xian =="當塗" | ren_xian=="蕪湖" | ren_xian=="遂寧" | ren_xian=="銅山" | ren_xian=="霍邱" | ren_xian=="青陽" | ren_xian=="靑陽" | ren_xian=="太平") & 籍贯省 == "江南"
-replace 籍贯省 = "江西" if (ren_xian == "南豊" | ren_xian =="撫州" | ren_xian =="鄱陽"） & 籍贯省 == "江南"
-replace 籍贯省 = "浙江" if ren_xian == "桐鄉" & 籍贯省 == "江南"
-replace 籍贯省 = "江蘇" if 籍贯省 == "江南"
-
+replace 籍貫省_clean = "安徽" if (籍贯县 == "亳州" | 籍贯县 =="休寧" | 籍贯县 =="婺源" | 籍贯县 == "宣城" | 籍贯县 == "巢縣" | 籍贯县 =="旌德" | 籍贯县 =="桐城" | 籍贯县 =="歙縣" | 籍贯县 =="涇縣" | 籍贯县 =="滁州" | 籍贯县 =="當塗" | 籍贯县 =="蕪湖" | 籍贯县 == "遂寧" | 籍贯县 == "銅山" | 籍贯县 == "霍邱" | 籍贯县 =="青陽" | 籍贯县 =="靑陽" | 籍贯县 =="太平") & 籍贯省 == "江南"
+replace 籍貫省_clean = "江西" if (籍贯县 == "南豊" | 籍贯县 =="撫州" | 籍贯县 =="鄱陽") & 籍贯省 == "江南"
+replace 籍貫省_clean = "浙江" if 籍贯县 == "桐鄉" & 籍贯省 == "江南"
+replace 籍貫省_clean = "江蘇" if 籍贯省 == "江南"
 
 ```
 
