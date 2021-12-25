@@ -9,6 +9,8 @@ The CGED-Q JSL Public Releases are a [Lee-Campbell Group project](https://www.sh
 
 # Sites for CGED-Q JSL Public Release download
 
+At these locations you can download the CGED-JSL Public Releases, along with documentation:
+
 [HKUST Dataspace](https://dataspace.ust.hk/dataset.xhtml?persistentId=doi:10.14711/dataset/E9GKRS)
 
 [Harvard Dataverse](https://doi.org/10.7910/DVN/GMQWVZ)
