@@ -78,3 +78,20 @@ replace 旗分 = "其他" if 旗分 != "" & ustrpos("|不顯|鑲黃|鑲黄|正�
 
 旗分_original will contain the original contents of 旗分
 
+## 地区 Region of post
+
+The following will help make 地区 more consistent across editions. It does not 'correct' 地区 since it can change from edition to edition based on changes in the definition of administrative units. Rather, it reassigns some regions to group with their most commonly observed administrative unit. For example, some newly formed administrative units are reassigned to their original units, for the purpose of making definitions consistent across editions.
+```
+generate 地区_original = 地区
+replace 地区 = "不顯" if 地区 == "" | 地区 == "503"
+replace 地区 = "甘肅省" if 地区 == "甘肅新疆" | 地区 == "甘肅新疆省"
+replace 地区 = "盛京" if 地区 == "吉林甯古塔城" | 地区 == "吉林省" | 地区 == "黑龍江城" | 地区 == "黑龍江城" | 地区 == "黑龍江省" | 地区 == "奉天省"
+replace 地区 = "江蘇省" if 地区 == "江南省" & (机构一 == "太湖廰" | 机构一 == "常州府" |  机构一 == "徐州府" | 机构一 == "揚州府" | 机构一 == "松江府" | 机构一 == "江寕府" | 机构一 == "江甯府" | 机构一 == "淮安府" | 机构一 == "蘇州府" |  机构一 == "鎭江府" | 机构一 == "鎮江府")
+replace 地区 = "江蘇省" if 地区 == "江南省" & (ustrpos(机构一,"海門") | ustrpos(机构一,"太倉") | ustrpos(机构一,"海門") | ustrpos(机构一,"淮安") | ustrpos(机构一,"通州") | ustrpos(机构一,"海州") | ustrpos(机构一,"兩淮") | ustrpos(机构一,"海州") | ustrpos(机构一,"江寕") | ustrpos(机构一,"江甯") | ustrpos(机构一,"江蘇") | ustrpos(机构一,"鎮江")) 
+replace 地区 = "陝西省" if 地区 == "陜西省"
+replace 地区 = "直隸省" if 地区 == "直隷省"
+```
+
+
+
+
