@@ -25,7 +25,7 @@ This file was originally created by Bijia Chen, and was added to by Cameron Camp
 
 Example of use, assuming one of the public release files is already loaded in STATA, and the Chushen recodes file is placed in the current working directory.
 
-chushen_category is the detailed chushen category, and chushen_order 
+chushen_category is the detailed chushen category as a string, and chushen_order is a numeric version. chushen_order_2 has broader categories, and chushen_order_2_eng is English.
 
 ```
 merge m:1 出身一 using "CGED-Q JSL Public Release Chushen Recodes.dta", keep(match master)
