@@ -21,7 +21,7 @@ At these locations you can download the CGED-JSL Public Releases, along with doc
 
 ## 出身 Chushen
 
-[出身 Chushen recode table - as a Stata .dta file](<CGED-Q JSL Public Release Chushen Recodes.dta>)
+Download [出身 Chushen recode table - as a Stata .dta file](<CGED-Q JSL Public Release Chushen Recodes.dta>)
 
 Through a merge, this groups the original 出身 chushen into a limited number of categories, with two levels of detail. 
 
@@ -42,7 +42,7 @@ drop _merge
 
 ## 籍貫省 Province of origin
 
-[籍貫省 Province of origin recode table - as a Stata .dta file](<CGED-Q JSL Public Release Province of Origin 籍貫省 Recodes.dta>)
+Download [籍貫省 Province of origin recode table - as a Stata .dta file](<CGED-Q JSL Public Release Province of Origin 籍貫省 Recodes.dta>)
 
 Through a merge, this helps clean up and make consistent the original 籍貫省 province of origin. We have included some additional code to handle 江南 Jiangnan when the 籍贯县 county of origin is also available.
 
