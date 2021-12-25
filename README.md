@@ -44,9 +44,7 @@ drop _merge
 
 [籍貫省 Province of origin recode table - as a Stata .dta file](<CGED-Q JSL Public Release Province of Origin 籍貫省 Recodes.dta>)
 
-Through a merge, this helps clean up and make consistent the original 籍貫省 province of origin. I have included some additional code to handle 
-
-
+Through a merge, this helps clean up and make consistent the original 籍貫省 province of origin. We have included some additional code to handle 江南 Jiangnan when the 籍贯县 county of origin is also available.
 
 Example of use, assuming one of the public release files is already loaded in STATA, and the Chushen recodes file is placed in the current working directory:
 
