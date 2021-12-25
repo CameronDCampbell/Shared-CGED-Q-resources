@@ -23,10 +23,17 @@ Through a merge, this groups the original 出身 chushen into a limited number o
 
 This file was originally created by Bijia Chen, and was added to by Cameron Campbell. 
 
-Example of use, assuming one of the public release files is already loaded in STATA, and the Chushen recodes file is placed in the current working directory:
+Example of use, assuming one of the public release files is already loaded in STATA, and the Chushen recodes file is placed in the current working directory.
+
+chushen_category is the detailed chushen category, and chushen_order 
 
 ```
 merge m:1 出身一 using "CGED-Q JSL Public Release Chushen Recodes.dta", keep(match master)
+replace chushen_category = "其他" if _merge == 1
+replace chushen_order_2_eng = "Other" if _merge == 1
+replace chushen_order = 12 if _merge == 1
+replace chushen_order_2 = 12 if _merge == 1
+ 
 ```
 
 [籍貫省 Province of origin recode table - as a Stata .dta file](<CGED-Q JSL Public Release Province of Origin 籍貫省 Recodes.dta>)
