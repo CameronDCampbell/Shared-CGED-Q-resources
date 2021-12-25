@@ -44,12 +44,21 @@ drop _merge
 
 [籍貫省 Province of origin recode table - as a Stata .dta file](<CGED-Q JSL Public Release Province of Origin 籍貫省 Recodes.dta>)
 
-Through a merge, this helps clean up and make consistent the original 籍貫省 province of origin. This does not handle 江南 since allocating locations there requires inspection of the names of the county of origin 籍貫縣. 
+Through a merge, this helps clean up and make consistent the original 籍貫省 province of origin. I have included some additional code to handle 
+
+
 
 Example of use, assuming one of the public release files is already loaded in STATA, and the Chushen recodes file is placed in the current working directory:
 
 ```
+generate 籍贯省_original = 籍贯省
 merge m:1 籍贯省 using "CGED-Q JSL Public Release Province of Origin 籍貫省 Recodes.dta",keep(match master) nogenerate
+replace 籍贯省 = "安徽" if (ren_xian == "亳州" |ren_xian =="休寧" | ren_xian=="婺源" | ren_xian == "宣城" | ren_xian=="巢縣" | ren_xian=="旌德" | ren_xian =="桐城" | ren_xian =="歙縣" | ren_xian =="涇縣" | ren_xian =="滁州" | ren_xian =="當塗" | ren_xian=="蕪湖" | ren_xian=="遂寧" | ren_xian=="銅山" | ren_xian=="霍邱" | ren_xian=="青陽" | ren_xian=="靑陽" | ren_xian=="太平") & 籍贯省 == "江南"
+replace 籍贯省 = "江西" if (ren_xian == "南豊" | ren_xian =="撫州" | ren_xian =="鄱陽"） & 籍贯省 == "江南"
+replace 籍贯省 = "浙江" if ren_xian == "桐鄉" & 籍贯省 == "江南"
+replace 籍贯省 = "江蘇" if 籍贯省 == "江南"
+
+
 ```
 
 After the merge, the new variable 籍貫省_clean will contain the 'cleaned' province names, and should be suitable for tabulations.
