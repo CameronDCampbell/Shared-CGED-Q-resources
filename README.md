@@ -46,4 +46,6 @@ Example of use, assuming one of the public release files is already loaded in ST
 merge m:1 籍贯省 using "CGED-Q JSL Public Release Province of Origin 籍貫省 Recodes.dta",keep(match master)
 ```
 
+The new variable 籍貫省_clean will contain the 'cleaned' province names, and should be suitable for tabulations.
+
 
