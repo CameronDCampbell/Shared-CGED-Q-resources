@@ -37,7 +37,7 @@ replace chushen_category = "其他" if _merge == 1
 replace chushen_order_2_eng = "Other" if _merge == 1
 replace chushen_order = 12 if _merge == 1
 replace chushen_order_2 = 12 if _merge == 1
- 
+drop _merge 
 ```
 
 ## 籍貫省 Province of origin
@@ -49,7 +49,7 @@ Through a merge, this helps clean up and make consistent the original 籍貫省 
 Example of use, assuming one of the public release files is already loaded in STATA, and the Chushen recodes file is placed in the current working directory:
 
 ```
-merge m:1 籍贯省 using "CGED-Q JSL Public Release Province of Origin 籍貫省 Recodes.dta",keep(match master)
+merge m:1 籍贯省 using "CGED-Q JSL Public Release Province of Origin 籍貫省 Recodes.dta",keep(match master) nogenerate
 ```
 
 After the merge, the new variable 籍貫省_clean will contain the 'cleaned' province names, and should be suitable for tabulations.
@@ -59,7 +59,6 @@ After the merge, the new variable 籍貫省_clean will contain the 'cleaned' pro
 The following code will clean up the contents of the 旗分 Banner variable:
 
 ```
-
 replace 旗分 = usubinstr(qifen,"旗","",.) if strpos(旗分,"旗人") == 0
 replace 旗分 = usubinstr(qifen,"廂","鑲",.) 
 replace 旗分 = usubinstr(qifen,"镶","鑲",.)
@@ -69,6 +68,5 @@ replace 旗分 = "正藍" if qifen == "正藍祺"
 replace 旗分 = "鑲白" if qifen == "鑲白祺"
 replace 旗分 = "不顯" if ustrpos(旗分,"?")
 replace 旗分 = "其他" if 旗分 != "" & ustrpos("|不顯|鑲黃|正白|正黃|正藍|鑲藍|鑲白|鑲紅|正紅|塗黑|","|"+旗分+"|") == 0
-
 ```
 
