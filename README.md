@@ -59,13 +59,13 @@ After the merge, the new variable 籍貫省_clean will contain the 'cleaned' pro
 The following code will clean up the contents of the 旗分 Banner variable:
 
 ```
-replace 旗分 = usubinstr(qifen,"旗","",.) if strpos(旗分,"旗人") == 0
-replace 旗分 = usubinstr(qifen,"廂","鑲",.) 
-replace 旗分 = usubinstr(qifen,"镶","鑲",.)
-replace 旗分 = usubinstr(qifen,"红","紅",.)
-replace 旗分 = usubinstr(qifen,"蓝","藍",.)
-replace 旗分 = "正藍" if qifen == "正藍祺"
-replace 旗分 = "鑲白" if qifen == "鑲白祺"
+replace 旗分 = usubinstr(旗分,"旗","",.) if strpos(旗分,"旗人") == 0
+replace 旗分 = usubinstr(旗分,"廂","鑲",.) 
+replace 旗分 = usubinstr(旗分,"镶","鑲",.)
+replace 旗分 = usubinstr(旗分,"红","紅",.)
+replace 旗分 = usubinstr(旗分,"蓝","藍",.)
+replace 旗分 = "正藍" if 旗分 == "正藍祺"
+replace 旗分 = "鑲白" if 旗分 == "鑲白祺"
 replace 旗分 = "不顯" if ustrpos(旗分,"?")
 replace 旗分 = "其他" if 旗分 != "" & ustrpos("|不顯|鑲黃|正白|正黃|正藍|鑲藍|鑲白|鑲紅|正紅|塗黑|","|"+旗分+"|") == 0
 ```
