@@ -83,7 +83,7 @@ replace 地区 = "直隸省" if 地区 == "直隷省"
 
 Download [籍貫省 Province of origin recode table - as a Stata .dta file](<CGED-Q JSL Public Release Province of Origin 籍貫省 Recodes.dta>)
 
-Through a merge, this helps clean up and make consistent the original 籍貫省 province of origin. We have included some additional code to handle 江南 Jiangnan when the 籍贯县 county of origin is also available. 
+Through a merge, this file helps clean up and make consistent the original 籍貫省 province of origin. We have included some additional code to handle 江南 Jiangnan when the 籍贯县 county of origin is also available. 
 After the merge, the new variable 籍貫省_clean will contain the 'cleaned' province names, and should be suitable for tabulations.
 
 Example of use, assuming one of the public release files is already loaded in STATA, and the Chushen recodes file is placed in the current working directory:
