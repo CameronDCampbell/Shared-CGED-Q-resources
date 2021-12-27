@@ -17,7 +17,7 @@ At these locations you can download the CGED-JSL Public Releases, along with doc
 
 [Renmin University Institute of Qing History](http://39.96.59.69/DownloadFile/DLFile)
 
-# Useful flag variables for selecting records for analysis 
+# Flag for selecting records for analysis 
 
 ## Empty posts
 When posts were vacant, the Jinshenlu still listed them, but the names of the officeholders were not filled in, or covered over. Normally we want to exclude records of empty posts when analyzing characteristics of officials. We do so by creating a flag variable to identify records of empty posts:
