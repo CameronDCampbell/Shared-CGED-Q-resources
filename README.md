@@ -42,7 +42,7 @@ The characteristics of officials who served in the central government (京官) d
 gen byte 京官 =  地区 == "京師" | 地区 == "內務府" | 地区 == "盛京" & (机构一 == "刑部衙門" | 机构一 == "戶部衙門" | 机构一 == "工部衙門" | 机构一 =="禮部衙門"| 机构一 =="兵部衙門")
 ```
 
-## Posts that are only recorded in commercial editions 坊刻本
+## Posts that only appear in commercial editions 坊刻本
 
 Certain types of posts were almost never recorded in official editions 官刻本 that were produced by the government, and only appeared in commercial editions 坊刻本 produced by publishing houses. See the *User Guide* for details. The CGED-Q includes a mixture of commercial and government editions. When constructing time trends in the composition of officials, excluding posts that were only recorded in commercial editions will produce more stable results, with fewer fluctuations from one edition to the next in the numbers of posts, or characteristics of the officials who held them. 
 
