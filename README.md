@@ -44,7 +44,7 @@ gen byte 京官 =  地区 == "京師" | 地区 == "內務府" | 地区 == "盛�
 
 ## Posts that only appear in commercial editions 坊刻本
 
-Certain types of posts were almost never recorded in official editions 官刻本 that were produced by the government, and only appeared in commercial editions 坊刻本 produced by publishing houses. See the *User Guide* for details. The CGED-Q includes a mixture of commercial and government editions. When constructing time trends in the composition of officials, excluding posts that were only recorded in commercial editions will produce more stable results, with fewer fluctuations from one edition to the next in the numbers of posts, or characteristics of the officials who held them. 
+Certain posts were almost never recorded in official editions 官刻本 that were produced by the government, and only appeared in commercial editions 坊刻本 produced by publishing houses. See the *User Guide* for details. The CGED-Q includes a mixture of commercial and government editions. When constructing time trends in the composition of officials, excluding posts that were only recorded in commercial editions will produce more stable results, with fewer fluctuations from one edition to the next in the numbers of posts, or characteristics of the officials who held them. 
 
 Through a labor-intensive and rather iterative process of looking at the distributionss of posts according to whether they are in commercial or government editions, we have developed code to flag the posts that only only seem to appear in commercial editions. *Use at your own risk. Our approach was ad hoc, and to put it kindly, inductive.*
 
