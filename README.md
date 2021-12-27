@@ -42,6 +42,33 @@ The characteristics of officials who served in the central government (京官) d
 gen byte 京官 =  地区 == "京師" | 地区 == "內務府" | 地区 == "盛京" & (机构一 == "刑部衙門" | 机构一 == "戶部衙門" | 机构一 == "工部衙門" | 机构一 =="禮部衙門"| 机构一 =="兵部衙門")
 ```
 
+## Posts that are only recorded in commercial editions 坊刻本
+
+Certain types of posts were almost never recorded in official editions 官刻本 that were produced by the government, and only appeared in commercial editions 坊刻本 produced by publishing houses. See the *User Guide* for details. The CGED-Q includes a mixture of commercial and government editions. When constructing time trends in the composition of officials, excluding posts that were only recorded in commercial editions will produce more stable results, with fewer fluctuations from one edition to the next in the numbers of posts, or characteristics of the officials who held them. 
+
+Through a labor-intensive and rather iterative process of looking at the distributionss of posts according to whether they are in commercial or government editions, we have developed code to flag the posts that only only seem to appear in commercial editions. *Use at your own risk. Our approach was ad hoc, and to put it kindly, inductive.*
+
+```
+
+local 干支 "丁卯 丁巳 丁未 丁酉 丁醜 丙午 丙子 丙戌 丙申 丙辰 乙亥 乙卯 乙巳 乙未 乙酉 乙醜 乙未 壬午 壬子 壬寅 壬戌 壬申 壬辰 己亥 己卯 己巳 己未 己酉 己醜 巳卯 巳巳 巳醜 庚午 庚子 庚寅 庚戌 庚申 庚辰 庚寅 庚辰 壬辰 戊午 戊子 戊寅 戊戌 戊申 戊辰 戊戌 甲午 甲子 甲寅 甲戌 甲辰 甲午 甲辰 癸亥 癸卯 癸巳 癸未 癸酉 癸醜 癸未 丙戌 丙子 辛亥 辛卯 辛巳 辛未 辛酉 辛醜"
+
+generate byte 官刻本官职 = 机构一 == "禦前侍衛" | 机构一 == "神機營" | 机构一 == "總管內務府衙門" | 地区 == "內務府" | 地区 == "內務府" | ustrpos(机构一,"旗都統") > 0 | (ustrpos(机构一,"國子監") > 0 & (ustrpos(官职一,"教習") > 0 | ustrpos(官职一,"旗") > 0)) | 	(官职一 == "庫使" & (机构一 == "工部衙門" | 机构一 == "戶部衙門"))
+	
+replace 官刻本官职 = 官刻本官职 | 机构二 == "藍翎侍衛" | 机构二 == "刑部額外司員" | 机构二 == "工部額外司員" | 机构二 == "花翎侍衛" | 机构二 == "禮部額外司員" | 机构二 == "坐粮廳衙門" | 机构二 == "坐粮㕔衙門" | 机构二 == "從九品吏目" | 	机构二 == "禦前侍衛" | ustrpos(机构二,"額外")
+
+replace 官刻本官职 = 官刻本官职 | 机构三 == "額外中書舍人"
+
+replace 官刻本官职 = 官刻本官职 | 官职一 == "禦前侍衛" | 官职一 == "翰林院五經博士" | 官职一 == "花翎侍衛" | 官职一 == "藍翎侍衛" | usubstr(官职一,-2,.) == "行走" | 官职一 == "額外序班" | 官职一 == "司樂" | 官职一 == "額外中書舍人" 
+
+replace 官刻本官职 = 官刻本官职 | 官职一 == "武英殿校録" | 官职一 == "額外經厯" | 官职一 == "額外待詔" | 官职一 == "額外典簿" | 官职一 == "額外主簿" | 官职一 == "揀發副指揮" | 官职一 == "額外主簿" | 官职一 == "揀發吏目" | 官职一 == "特授正指揮" | 官职一 == "揀發正指揮" | 官职一 == "特授副指揮" | 官职一 == "額外主事" | 官职一 == "特授吏目" | 官职一 == "候補主事" | 官职一 == "額外中書"
+
+foreach x of local 官刻本官职 {
+	replace 官刻本官职 = 官刻本官职 | 官职一 == "`x'" | 官职一 == "`x'科" | ///
+		官职一 == "`x'" | 官职一 == "`x'科" | 机构二 == "`x'" | 机构二 == "`x'科" | 机构二 == "`x'" | 机构二 == "`x'科"
+}
+
+```
+
 # Recoding and recategorizing variables
 
 ## 出身 Chushen
