@@ -34,7 +34,7 @@ Because the appointment and promotion of Banner (旗人) officials was very diff
 generate byte 旗人 = 旗分 != "" | (姓 == "") | (身份一 != "") | (tab 身份二 != "") | (爵位 != "")
 ```
 
-## Central government officals versus non-Central government officials
+## Central versus non-Central government officals
 
 The characteristics of officials who served in the central government (京官) different from those who served in the provinces (外官). We generally distinguish them in analyses.
 
