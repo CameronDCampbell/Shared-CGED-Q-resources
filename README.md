@@ -23,7 +23,7 @@ At these locations you can download the CGED-JSL Public Releases, along with doc
 When posts were vacant, the Jinshenlu still listed them, but the names of the officeholders were not filled in, or covered over. Normally we want to exclude records of empty posts when analyzing characteristics of officials. We do so by creating a flag variable to identify records of empty posts:
 
 ```
-generate bye empty_post = 名 == "空白" | 名 == "涂黑" 
+generate byte empty_post = 名 == "空白" | 名 == "涂黑" 
 ```
 
 ## Banner versus non-Banner officials 
