@@ -32,7 +32,7 @@ generate byte empty_post = 名 == "空白" | 名 == "涂黑"
 Because the appointment and promotion of Banner (旗人) officials was very different from that of non-Banner officials (民人), we usually analyze them separately. We create flag variable to identify them based on the contents of four variables that normally are only filled in for Bannermen: 旗分, 身份一, 身份二, 爵位. We also anyone who doesn't have a surname recorded is a Bannermen: 
 
 ```
-generate byte 旗人 = 旗分 != "" | (姓 == "") | (身份一 != "") | (tab 身份二 != "") | (爵位 != "")
+generate byte 旗人 = 旗分 != "" | (姓 == "") | (身份一 != "") | (身份二 != "") | (爵位 != "")
 ```
 
 ## Central versus non-Central government officals
