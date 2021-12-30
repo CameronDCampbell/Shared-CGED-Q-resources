@@ -18,4 +18,15 @@ At these locations you can download the CGED-JSL Public Releases, along with doc
 
 [Renmin University Institute of Qing History](http://39.96.59.69/DownloadFile/DLFile)
 
+# Code for working with the CGED-Q Public Release
+
+[Flag variables](FlagVariables.md)
+
+Flag variables to identify sets of records that are commonly excluded, including records of empty posts, duplicates, and posts that only appear in commercial editions.
+
+Flag variables that identify sets of records associated with particular types of officials, including those serving in the central government, and those who were Bannermen.
+
+[Recoding/recategorizing/cleaning variables](recoding.md)
+
+Code to regroup variables into analytically useful categories (e.g. chushen 出身), clean up the contents of variables (e.g. province of origin, location of post) 
 
