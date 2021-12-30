@@ -33,7 +33,7 @@ Through a labor-intensive and rather iterative process of looking at the distrib
 
 local 干支 "丁卯 丁巳 丁未 丁酉 丁醜 丙午 丙子 丙戌 丙申 丙辰 乙亥 乙卯 乙巳 乙未 乙酉 乙醜 乙未 壬午 壬子 壬寅 壬戌 壬申 壬辰 己亥 己卯 己巳 己未 己酉 己醜 巳卯 巳巳 巳醜 庚午 庚子 庚寅 庚戌 庚申 庚辰 庚寅 庚辰 壬辰 戊午 戊子 戊寅 戊戌 戊申 戊辰 戊戌 甲午 甲子 甲寅 甲戌 甲辰 甲午 甲辰 癸亥 癸卯 癸巳 癸未 癸酉 癸醜 癸未 丙戌 丙子 辛亥 辛卯 辛巳 辛未 辛酉 辛醜"
 
-generate byte 坊刻本官职 = 机构一 == "禦前侍衛" | 机构一 == "神機營" | 机构一 == "總管內務府衙門" | 地区 == "內務府" | 地区 == "內務府" | ustrpos(机构一,"旗都統") > 0 | (ustrpos(机构一,"國子監") > 0 & (ustrpos(官职一,"教習") > 0 | ustrpos(官职一,"旗") > 0)) | 	(官职一 == "庫使" & (机构一 == "工部衙門" | 机构一 == "戶部衙門"))
+generate byte 坊刻本官职 = 机构一 == "禦前侍衛" | 机构一 == "神機營" | 机构一 == "總管內務府衙門" | 地区 == "內務府" | 地区 == "內務府" | ustrpos(机构一,"旗都統") > 0 | (ustrpos(机构一,"國子監") > 0 & (ustrpos(官职一,"教習") > 0 | ustrpos(官职一,"旗") > 0)) | (官职一 == "庫使" & (机构一 == "工部衙門" | 机构一 == "戶部衙門"))
 	
 replace 坊刻本官职 = 坊刻本官职 | 机构二 == "藍翎侍衛" | 机构二 == "刑部額外司員" | 机构二 == "工部額外司員" | 机构二 == "花翎侍衛" | 机构二 == "禮部額外司員" | 机构二 == "坐粮廳衙門" | 机构二 == "坐粮㕔衙門" | 机构二 == "從九品吏目" | 	机构二 == "禦前侍衛" | ustrpos(机构二,"額外")
 
@@ -72,3 +72,12 @@ replace duplicate = duplicate | (阳历年份 == 1901 & 季节号 == 3 & ((序�
 replace duplicate = duplicate | (阳历年份 == 1901 & 季节号 == 3 & ((序号 >= 11049 & 序号 <= 11063) | (序号 >= 11322 & 序号 <= 11352) | (序号 >= 11716 & 序号 <= 11742) | (序号 >= 11933 & 序号 <= 11953) | (序号 >= 12213 & 序号 <= 12245) | (序号 >= 14053 & 序号 <= 14084) | (序号 >= 14858 & 序号 <= 14890) | (序号 >= 14921 & 序号 <= 14950) | (序号 >= 15373 & 序号 <= 15405) | (序号 >= 15993 & 序号 <= 16025) | (序号 >= 16127 & 序号 <= 16161) | (序号 >= 16654 & 序号 <= 16687) | (序号 >= 16718 & 序号 <= 16747) | (序号 >= 16929 & 序号 <= 16966)))
 ```
 
+## Posts that appear for the first time in 1911
+
+A large number of posts appear for the first time in 1911. If your focus is on posts that are included in every edition, or nearly every edition, then you may want to flag them and exclude them. The following snippet produces a variable ``new_in_1911`` that can be used for this purpose: 
+
+```
+generate byte new_in_1911 = ustrpos(机构一,"檢察廳") | ustrpos(机构一,"審判廳") | ustrpos(机构一,"審判檢察两廳") | ///
+	机构一 == "稅務處" | 机构一 == "提學司" | 机构一 == "提法司"
+label variable new_in_1911 "Appears for the first time in 1911"
+```
